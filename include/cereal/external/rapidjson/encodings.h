@@ -17,7 +17,7 @@
 
 #include "rapidjson.h"
 
-#ifdef _MSC_VER
+#if defined ( _MSC_VER ) && !defined(__clang__)
 CEREAL_RAPIDJSON_DIAG_PUSH
 CEREAL_RAPIDJSON_DIAG_OFF(4244) // conversion from 'type1' to 'type2', possible loss of data
 CEREAL_RAPIDJSON_DIAG_OFF(4702)  // unreachable code
@@ -25,6 +25,8 @@ CEREAL_RAPIDJSON_DIAG_OFF(4702)  // unreachable code
 CEREAL_RAPIDJSON_DIAG_PUSH
 CEREAL_RAPIDJSON_DIAG_OFF(effc++)
 CEREAL_RAPIDJSON_DIAG_OFF(overflow)
+#elif defined(__clang__)
+CEREAL_RAPIDJSON_DIAG_OFF(unused-local-typedef)
 #endif
 
 CEREAL_RAPIDJSON_NAMESPACE_BEGIN

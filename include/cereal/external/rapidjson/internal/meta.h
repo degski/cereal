@@ -21,7 +21,7 @@
 CEREAL_RAPIDJSON_DIAG_PUSH
 CEREAL_RAPIDJSON_DIAG_OFF(effc++)
 #endif
-#if defined(_MSC_VER)
+#if defined (_MSC_VER) && !defined(__clang__)
 CEREAL_RAPIDJSON_DIAG_PUSH
 CEREAL_RAPIDJSON_DIAG_OFF(6334)
 #endif

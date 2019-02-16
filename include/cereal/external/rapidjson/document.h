@@ -26,7 +26,7 @@
 #include <limits>
 
 CEREAL_RAPIDJSON_DIAG_PUSH
-#ifdef _MSC_VER
+#if defined(_MSC_VER) && !defined(__clang__)
 CEREAL_RAPIDJSON_DIAG_OFF(4127) // conditional expression is constant
 CEREAL_RAPIDJSON_DIAG_OFF(4244) // conversion from kXxxFlags to 'uint16_t', possible loss of data
 #endif
@@ -35,6 +35,7 @@ CEREAL_RAPIDJSON_DIAG_OFF(4244) // conversion from kXxxFlags to 'uint16_t', poss
 CEREAL_RAPIDJSON_DIAG_OFF(padded)
 CEREAL_RAPIDJSON_DIAG_OFF(switch-enum)
 CEREAL_RAPIDJSON_DIAG_OFF(c++98-compat)
+CEREAL_RAPIDJSON_DIAG_OFF(exceptions)
 #endif
 
 #ifdef __GNUC__

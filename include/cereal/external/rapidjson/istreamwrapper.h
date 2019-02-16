@@ -23,7 +23,7 @@ CEREAL_RAPIDJSON_DIAG_PUSH
 CEREAL_RAPIDJSON_DIAG_OFF(padded)
 #endif
 
-#ifdef _MSC_VER
+#if defined ( _MSC_VER ) && !defined(__clang__)
 CEREAL_RAPIDJSON_DIAG_PUSH
 CEREAL_RAPIDJSON_DIAG_OFF(4351) // new behavior: elements of array 'array' will be default initialized
 CEREAL_RAPIDJSON_DIAG_OFF(4127) // ignore assert(false) for triggering exception

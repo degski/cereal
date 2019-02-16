@@ -33,7 +33,7 @@
 #include <emmintrin.h>
 #endif
 
-#ifdef _MSC_VER
+#if defined ( _MSC_VER ) && !defined (__clang__)
 CEREAL_RAPIDJSON_DIAG_PUSH
 CEREAL_RAPIDJSON_DIAG_OFF(4127) // conditional expression is constant
 #endif
